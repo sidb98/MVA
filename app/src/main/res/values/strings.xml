@@ -2,4 +2,8 @@
     <string name="app_name">MVA</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="left_button">\u2190</string>
+    <string name="right_button">\u2192</string>
+    <string name="top_button">\u2191</string>
+    <string name="bottom_button">\u2193</string>
 </resources>
