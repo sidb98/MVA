@@ -1,80 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
 
     <Button
         android:id="@+id/button_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="1dp"
-        android:text="@string/right_button"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_bottom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_left"
-        app:layout_constraintTop_toBottomOf="@+id/button_top" />
+        android:layout_below="@id/button_top"
+        android:layout_toEndOf="@+id/button_top"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:text="@string/right_button" />
 
     <Button
         android:id="@+id/button_left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:text="@string/left_button"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/button_right"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_top" />
+        android:layout_below="@id/button_top"
+        android:layout_toStartOf="@+id/button_top"
+        android:layout_marginTop="20dp"
+        android:textSize="40sp"
+        android:text="@string/left_button" />
 
     <Button
         android:id="@+id/button_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/top_button"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_right"
-        app:layout_constraintStart_toEndOf="@+id/button_left"
-        app:layout_constraintTop_toBottomOf="@+id/ViewFlipper" />
+        android:textSize="40sp"
+        android:layout_below="@id/ViewFlipper"
+        android:layout_centerHorizontal="true"
+        />
 
     <Button
         android:id="@+id/button_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/button_left"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="123dp"
+        android:layout_marginTop="20dp"
         android:text="@string/bottom_button"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_left"
-        app:layout_constraintTop_toBottomOf="@+id/button_right" />
+        android:textSize="40sp"
+
+
+        android:layout_centerHorizontal="true"/>
 
     <ViewFlipper
         android:id="@+id/ViewFlipper"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="28dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_top"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_marginTop="70dp">
 
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-
-            android:src="@drawable/first" />
+            android:layout_height="400dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/e" />
 
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="400dp"
+            android:layout_centerInParent="true"
             android:src="@drawable/second" />
 
 
@@ -82,12 +73,13 @@
             android:id="@+id/imageView3"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:src="@drawable/third" />
-
+            android:layout_centerInParent="true"
+            android:src="@drawable/third" />=
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="400dp"
+            android:layout_centerInParent="true"
             android:src="@drawable/fourth" />
     </ViewFlipper>
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
