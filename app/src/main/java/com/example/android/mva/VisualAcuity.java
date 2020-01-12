@@ -1,6 +1,9 @@
 package com.example.android.mva;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,14 +11,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ViewFlipper;
+import android.graphics.Matrix;
+import android.widget.ImageView;
+
+import java.util.Random;
 
 public class VisualAcuity extends Fragment implements View.OnClickListener {
     ViewFlipper viewFlipper;
     Button b1,b2,b3,b4;
+    int c=0;
+    //View visualAcuityView =  inflater.inflate(R.layout.fragment_visual_acuity, container, false);
     @Nullable
     @Override
     public View onCreateView (@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
 
         View visualAcuityView =  inflater.inflate(R.layout.fragment_visual_acuity, container, false);
 
@@ -35,13 +46,41 @@ public class VisualAcuity extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         if (v == b1) {
-            viewFlipper.showNext();
+            //viewFlipper.showNext();
         } else if (v == b2) {
-            viewFlipper.showNext();
+            //viewFlipper.showNext();
         } else if (v == b3) {
-            viewFlipper.showNext();
+            //viewFlipper.showNext();
         } else if (v == b4) {
-            viewFlipper.showNext();
+            //viewFlipper.showNext();
         }
+
+
+        c++;
+        int dec=0;
+        if(c>3){
+            dec=10;
+            c=0;
+        }
+
+
+        Random rand = new Random();
+        int r=rand.nextInt(4);
+
+        //LayoutInflater inflater;
+        //View visualAcuityView =inflater.inflate(R.layout.fragment_visual_acuity, container, false);
+        ImageView view= (ImageView)getView().findViewById(R.id.imageView1);
+        Bitmap myImg = BitmapFactory.decodeResource(getResources(), R.drawable.e);
+
+        Matrix matrix = new Matrix();
+        //matrix.postRotate(90*r);
+        //matrix.postScale(myImg.getWidth()-dec, myImg.getHeight()-dec);
+
+        Bitmap rotated = Bitmap.createBitmap(myImg, 0, 0, myImg.getWidth(), myImg.getHeight(),
+                matrix, true);
+
+        view.setImageBitmap(rotated);
+        //dec=0;
+
     }
 }
