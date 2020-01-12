@@ -43,7 +43,5 @@ public class VisualAcuity extends Fragment implements View.OnClickListener {
         } else if (v == b4) {
             viewFlipper.showNext();
         }
-
-
     }
 }
